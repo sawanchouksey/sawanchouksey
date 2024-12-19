@@ -9703,3 +9703,27 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+/* Add space between each progress bar */
+.progress-wrapper {
+  margin-bottom: 15px; /* Adjust this value for desired spacing */
+}
+
+/* Ensure progress bars fill the column height if needed */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-6 {
+  padding: 0 15px; /* Add some padding for better spacing in columns */
+}
+
+.certifications-mf {
+  padding: 20px;
+}
+
+/* Make sure the progress bars look good on smaller devices */
+.progress {
+  height: 10px; /* Define a fixed height for the progress bar */
+}
