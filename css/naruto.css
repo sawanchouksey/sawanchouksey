@@ -1,0 +1,579 @@
+/* Naruto Theme CSS */
+:root {
+    --naruto-orange: #FF7000;
+    --naruto-blue: #004b90;
+    --naruto-dark: #1a1a1a;
+    --konoha-leaf: #3d8c40;
+    --scroll-bg: #fdf5e6;
+    --uchiba-red: #ff0000;
+}
+
+body {
+    background-color: var(--naruto-dark);
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background overlays with Naruto Anime Scene */
+.hero-wrap.js-fullheight {
+    background-image: url('../images/naruto_epic_background.png') !important;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-wrap.js-fullheight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(26, 26, 26, 0.45), rgba(26, 26, 26, 0.65));
+    z-index: 0;
+}
+
+.one-third.img {
+    background-image: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.one-third.img::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 112, 0, 0.2) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Framed Hero Image */
+.hero-img-framed {
+    width: 80%;
+    max-width: 380px;
+    height: auto;
+    border: 6px solid var(--naruto-orange);
+    border-radius: 12px;
+    box-shadow: 0 0 25px var(--naruto-orange), inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    animation: chakra-pulse 4s infinite;
+    position: relative;
+    z-index: 2;
+}
+
+/* Chakra Corner Accents on Hero Image */
+.one-third.img::before {
+    content: '🌀';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    opacity: 0.4;
+    z-index: 3;
+    animation: rotate-slow 10s linear infinite;
+}
+
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes chakra-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px var(--naruto-orange);
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 40px var(--naruto-orange);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px var(--naruto-orange);
+    }
+}
+
+/* Kurama Silhouette Shadow */
+.kurama-shadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png');
+    /* Kurama-like silhouette reference */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.25;
+    filter: invert(1) brightness(0.6) sepia(1) saturate(100) hue-rotate(-30deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Compact Nine-Tails Grid */
+.nine-tails-grid {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid rgba(255, 112, 0, 0.1);
+}
+
+.tail-title {
+    font-weight: 700;
+    color: var(--naruto-orange);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tail-item {
+    background: rgba(255, 112, 0, 0.05);
+    border: 1px solid rgba(255, 112, 0, 0.2);
+    border-radius: 8px;
+    padding: 8px 4px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tail-item:hover {
+    background: rgba(255, 112, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(255, 112, 0, 0.2);
+}
+
+.tail-icon {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.tail-progress {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.tail-bar {
+    height: 100%;
+    background: var(--naruto-orange);
+    box-shadow: 0 0 5px var(--naruto-orange);
+}
+
+/* About List Right Side */
+.about-info-list li {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #ccc;
+    display: flex;
+    align-items: flex-start;
+    /* Align icon/labels to the top of the content */
+}
+
+.about-info-list li span:first-child {
+    min-width: 160px;
+    /* Increased width to prevent label wrapping */
+    font-weight: 700;
+    flex-shrink: 0;
+    /* Prevent the label from shrinking */
+    display: inline-block;
+}
+
+.about-info-list li span:last-child {
+    flex-grow: 1;
+    line-height: normal;
+    /* Reset line height for better flow */
+}
+
+.text-orange {
+    color: var(--naruto-orange) !important;
+}
+
+/* Character/Profile styling */
+.img-about {
+    border: 3px solid var(--naruto-orange);
+    box-shadow: 0 0 30px rgba(255, 112, 0, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* Loader Spin Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Typography & Global Aesthetics */
+.heading-section h2 {
+    color: var(--naruto-orange) !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.heading-section .big {
+    color: rgba(255, 255, 255, 0.05) !important;
+    font-size: 80px;
+    top: -40px;
+}
+
+/* Glassmorphism Navigation */
+.navbar-dark {
+    background: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 2px solid var(--naruto-orange);
+    backdrop-filter: blur(15px);
+}
+
+.navbar-brand {
+    color: var(--naruto-orange) !important;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--naruto-orange) !important;
+    transform: translateY(-2px);
+}
+
+/* Shinobi Buttons */
+.btn-primary {
+    background: var(--naruto-orange) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 12px 30px !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 112, 0, 0.4);
+    transition: 0.4s;
+}
+
+.btn-primary:hover {
+    background: #fff !important;
+    color: var(--naruto-orange) !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 112, 0, 0.6);
+}
+
+/* Themed Sections */
+.ftco-section {
+    padding: 7em 0;
+    position: relative;
+}
+
+#about-section,
+#resume-section,
+#project-section {
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('../images/naruto_scenes_bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Custom Icons */
+/* Detailed Nine-Tails List styling */
+.nine-tails-detailed {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 112, 0, 0.1);
+}
+
+.tail-skill-item .tail-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #eee;
+}
+
+.tail-skill-item .text-orange {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.icon-map-signs::before {
+    content: "🍥";
+}
+
+.icon-phone2::before {
+    content: "📞";
+}
+
+.icon-paper-plane::before {
+    content: "🦅";
+}
+
+.icon-globe::before {
+    content: "🌐";
+}
+
+@keyframes flicker {
+    from {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Mastered Jutsu Card Styling */
+.jutsu-grid {
+    perspective: 1000px;
+}
+
+.jutsu-card {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid rgba(255, 112, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.jutsu-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    border-color: var(--naruto-orange);
+    box-shadow: 0 15px 35px rgba(255, 112, 0, 0.3);
+}
+
+.jutsu-icon-wrap {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--naruto-orange);
+}
+
+.jutsu-icon {
+    font-size: 32px;
+}
+
+/* Unique Jutsu Styles */
+.rasengan {
+    text-shadow: 0 0 15px #00aaff;
+    animation: spin 3s linear infinite;
+}
+
+.chidori {
+    text-shadow: 0 0 15px #fff;
+    animation: flicker 0.2s infinite;
+}
+
+.sharingan {
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.amaterasu {
+    text-shadow: 0 0 20px #ff7000;
+    animation: chakra-pulse 2s infinite;
+}
+
+.susanoo {
+    text-shadow: 0 0 15px #bb00ff;
+}
+
+.rinnegan {
+    text-shadow: 0 0 15px #8800ff;
+}
+
+.sage-mode {
+    text-shadow: 0 0 15px #00ff00;
+}
+
+.jutsu-name {
+    color: var(--naruto-orange);
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.jutsu-origin {
+    color: #999;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.chakra-meter {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.chakra-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--naruto-orange), #fff);
+    box-shadow: 0 0 10px var(--naruto-orange);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+/* Shinobi Projects Section */
+.shinobi-project {
+    background: rgba(15, 15, 15, 0.85);
+    border: 2px solid rgba(255, 112, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.shinobi-project:hover {
+    transform: scale(1.03);
+    border-color: var(--naruto-orange);
+    box-shadow: 0 0 30px rgba(255, 112, 0, 0.4);
+}
+
+.project-img-container {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-img-container .block-20 {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.shinobi-project:hover .block-20 {
+    transform: scale(1.15);
+}
+
+.project-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-tag {
+    background: var(--naruto-orange);
+    color: #000;
+    padding: 2px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 12px;
+    width: fit-content;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--naruto-orange);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.project-desc {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    margin-top: auto;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: var(--naruto-orange);
+    text-decoration: none;
+}
+
+.project-link i {
+    font-size: 12px;
+}
+
+.project-scroll-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--naruto-orange);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: 1px solid var(--naruto-orange);
+    z-index: 2;
+}
